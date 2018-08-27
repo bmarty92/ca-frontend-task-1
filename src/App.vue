@@ -1,29 +1,38 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <main class="app">
+        <AppHero/>
+        <div class="app__whitebox">
+            <AppWhiteBox>
+                <router-view></router-view>
+            </AppWhiteBox>
+        </div>
+        <AppFooter/>
+    </main>
 </template>
+<script>
+import AppHero from '@/components/AppHero'
+import AppWhiteBox from '@/components/AppWhiteBox'
+import AppFooter from '@/components/AppFooter'
+export default {
+    components: {
+        AppHero,
+        AppWhiteBox,
+        AppFooter
+    }
+}
+</script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+    .app { 
+        display: flex;
+        flex-flow: column;
+        min-height: 100%;
+
+        &__whitebox {
+            display: flex;
+            flex: 1;
+            margin-top: -45px;
+            padding: 0 130px;
+        }
     }
-  }
-}
 </style>
