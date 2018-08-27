@@ -4,6 +4,7 @@ import AboutEducation from '@/views/About/AboutEducation'
 import AboutCareer from '@/views/About/AboutCareer'
 import AboutKnow from '@/views/About/AboutKnow'
 import Contacts from '@/views/Contacts'
+
 export default [
     {
         name: 'Home',

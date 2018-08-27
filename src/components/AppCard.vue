@@ -6,6 +6,7 @@
 </template>
 <script>
 export default {
+    name: 'AppCard',
     props: {
         data: {
             type: Object,

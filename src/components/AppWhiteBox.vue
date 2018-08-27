@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-    name: 'AppWhiteBox',
+    name: 'AppWhiteBox'
 }
 </script>
 

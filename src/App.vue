@@ -9,10 +9,12 @@
         <AppFooter/>
     </main>
 </template>
+
 <script>
 import AppHero from '@/components/AppHero'
 import AppWhiteBox from '@/components/AppWhiteBox'
 import AppFooter from '@/components/AppFooter'
+
 export default {
     components: {
         AppHero,
