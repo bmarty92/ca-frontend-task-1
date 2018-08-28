@@ -3,9 +3,9 @@ import About from '@/views/About'
 import AboutEducation from '@/views/About/AboutEducation'
 import AboutCareer from '@/views/About/AboutCareer'
 import AboutKnow from '@/views/About/AboutKnow'
-import Contacts from '@/views/Contacts'
 import Gallery from '@/views/Gallery'
 import Posts from '@/views/Posts'
+import CreatePost from '@/views/Posts/CreatePost'
 
 export default [
     {
@@ -44,15 +44,6 @@ export default [
         ]
     },
     {
-        name: 'Contacts',
-        path: '/contacts',
-        component: Contacts,
-        meta: {
-            displayName: 'Kontaktai',
-            displayPageTitle: 'Kontaktai'
-        }
-    },
-    {
         name: 'Gallery',
         path: '/gallery',
         component: Gallery,
@@ -70,4 +61,13 @@ export default [
             displayPageTitle: 'Pranesimai'
         }
     },
+    {
+        name: 'CreatePost',
+        path: '/create-post',
+        component: CreatePost,
+        meta: {
+            displayName: 'Sukurti pranesima',
+            displayPageTitle: 'Sukurti pranesima'
+        }
+    }
 ]

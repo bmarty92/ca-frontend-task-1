@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-import PostsBox from './PostsBox'
+import PostsBox from '@/components/PostsBox'
 export default {
     name: 'ViewPosts',
     components: {
