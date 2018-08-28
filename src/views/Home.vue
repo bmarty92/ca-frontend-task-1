@@ -1,23 +1,24 @@
 <template>
     <div class="view-home">
-        <div class="view-home__container">
-            <div
+        <AppContainer>
+            <AppColumn
                 v-for="(card, index) in cards"
                 :key="index"
-                class="view-home__col"
             >
-                <AppCard
-                    :data="card"
-                />
-            </div>
-        </div>
+                <AppCard :data="card"/>
+            </AppColumn>
+        </AppContainer>
     </div>
 </template>
 <script>
+import AppContainer from '@/components/AppContainer'
+import AppColumn from '@/components/AppColumn'
 import AppCard from '@/components/AppCard'
 export default {
     name: 'ViewHome',
     components: {
+        AppContainer,
+        AppColumn,
         AppCard
     },
     data () {
@@ -43,16 +44,6 @@ export default {
 
 <style lang="scss">
     .view-home {
-        &__container {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -15px;
-        }
-
-        &__col {
-            padding: 15px;
-            flex: 0 0 33%;
-            min-width: 33%;
-        }
+        //
     }
 </style>

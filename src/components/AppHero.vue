@@ -2,7 +2,7 @@
     <section class="app-hero">
         <AppHeader/>
         <div class="app-hero__content">
-            <h1 class="app-hero__title">Mantas Morkūnas</h1>
+            <h1 class="app-hero__title">MANTAS MORKŪNAS</h1>
             <h3 class="app-hero__subtitle">Portfolio</h3>
         </div>
     </section>

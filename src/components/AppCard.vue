@@ -19,6 +19,7 @@ export default {
     .app-card {
         background-color: #3252E5;
         padding: 30px;
+        height: 100%;
 
         &__image {
             width: 100%;

@@ -1,5 +1,5 @@
 <template>
-    <footer class="app-footer">© 2018 Mantas Morkūnas</footer>
+    <footer class="app-footer">© 2018 MANTAS MORKŪNAS</footer>
 </template>
 <script>
 export default {
