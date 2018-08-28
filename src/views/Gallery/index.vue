@@ -1,14 +1,11 @@
 <template>
    <div class="view-gallery">
-        <AppContainer v-if="photos.length !== 0">
+        <AppContainer v-if="photos.length">
             <AppColumn
                 v-for="photo in photos"
                 :key="photo.id"
             >
-                <AppCard :data="{
-                    title: photo.title,
-                    image: photo.url
-                }"/>
+                <AppCard :data="photo"/>
             </AppColumn>
         </AppContainer>
         <h3 v-else>Loading...</h3>
@@ -25,10 +22,21 @@ export default {
         AppColumn,
         AppCard
     },
+    computed: {
+        photos () {
+            return this.asyncData.map(record => {
+                return {
+                    id: record.id,
+                    title: record.title,
+                    image: record.url
+                }
+            })
+        }
+    },
     data () {
         return {
             url: 'https://jsonplaceholder.typicode.com/photos/?_limit=18',
-            photos: []
+            asyncData: []
         }
     },
     created () {
@@ -37,7 +45,7 @@ export default {
     methods: {
         async getPhotos () {
             const { data } = await this.axios.get(this.url)
-            this.photos = data
+            this.asyncData = data
         }
     }
 }
