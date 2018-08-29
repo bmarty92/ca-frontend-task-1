@@ -6,6 +6,8 @@ import AboutKnow from '@/views/About/AboutKnow'
 import Gallery from '@/views/Gallery'
 import Posts from '@/views/Posts'
 import CreatePost from '@/views/Posts/CreatePost'
+import SinglePost from '@/views/Posts/SinglePost'
+import EditPost from '@/views/Posts/EditPost'
 
 export default [
     {
@@ -63,11 +65,27 @@ export default [
     },
     {
         name: 'CreatePost',
-        path: '/create-post',
+        path: '/posts/create',
         component: CreatePost,
         meta: {
             displayName: 'Sukurti pranesima',
             displayPageTitle: 'Sukurti pranesima'
+        }
+    },
+    {
+        name: 'SinglePost',
+        path: '/posts/:id',
+        component: SinglePost,
+        meta: {
+            displayPageTitle: 'Pranesimas'
+        }
+    },
+    {
+        name: 'EditPost',
+        path: '/posts/:id/edit',
+        component: EditPost,
+        meta: {
+            displayPageTitle: 'Redaguoti pranesima'
         }
     }
 ]
