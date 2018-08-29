@@ -5,6 +5,12 @@
                 v-for="post in posts"
                 :key="post.id"
                 :data="post"
+                @click.native="$router.push({
+                    name: 'SinglePost',
+                    params: {
+                        id: post.id
+                    }
+                })"
             />
         </template>
         <h3 v-else>Loading...</h3>

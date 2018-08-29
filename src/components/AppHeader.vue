@@ -16,7 +16,7 @@ export default {
     },
     computed: {
         navigation () {
-            return routes.map(route => {
+            return routes.filter(route => route.meta.displayName).map(route => {
                 return {
                     name: route.meta.displayName,
                     to: {
