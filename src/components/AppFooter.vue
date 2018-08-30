@@ -1,19 +1,19 @@
 <template>
-    <footer class="app-footer">© 2018 MANTAS MORKŪNAS</footer>
+	<footer class="app-footer">© 2018 MANTAS MORKŪNAS</footer>
 </template>
 <script>
 export default {
-    name: 'AppFooter'
+	name: 'AppFooter'
 }
 </script>
 
 <style lang="scss">
-    .app-footer {
-        padding-top: 60px;
-        padding-bottom: 30px;
-        width: 100%;
-        text-align: center;
-        font-size: 12px;
-        color: rgba(black, .87);
-    }
+	.app-footer {
+		padding-top: 60px;
+		padding-bottom: 30px;
+		width: 100%;
+		text-align: center;
+		font-size: 12px;
+		color: rgba(black, .87);
+	}
 </style>

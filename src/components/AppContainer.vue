@@ -1,17 +1,17 @@
 <template>
-    <div class="app-container">
-        <slot></slot>
-    </div>
+	<div class="app-container">
+		<slot></slot>
+	</div>
 </template>
 <script>
 export default {
-    name: 'AppContainer'
+	name: 'AppContainer'
 }
 </script>
 <style lang="scss">
-    .app-container {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -15px;
-    }
+	.app-container {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
 </style>
