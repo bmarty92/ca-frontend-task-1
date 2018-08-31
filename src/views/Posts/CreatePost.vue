@@ -26,6 +26,7 @@ import AppTextField from '@/components/AppTextField'
 import AppTextarea from '@/components/AppTextarea'
 import AppButton from '@/components/AppButton'
 import PostsBox from '@/components/PostsBox'
+import { mapActions, mapGetters } from 'vuex'
 export default {
 	name: 'Viewcreate-post',
 	components: {
@@ -46,13 +47,13 @@ export default {
 		}
 	},
 	methods: {
+		...mapActions({
+			createPost: 'createPost'
+		}),
 		async onSubmit () {
 			if (this.form.title.length > 0 && this.form.body.length > 0) {
 				this.loading = true
-				const response = await this.axios.post('https://jsonplaceholder.typicode.com/posts', {
-					userId: 1,
-					...this.form
-				})
+				const response = await this.createPost(this.form)
 				this.loading = false
 
 				if (response.status === 201) {

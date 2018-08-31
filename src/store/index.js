@@ -22,6 +22,14 @@ export default {
 			} else {
 				commit('setPost', post)
 			}
+		},
+		createPost ({commit, getters}, form) {
+			return new Promise(async resolve => {
+				const response = await axios.post(baseURL, form)
+				const updatedPosts = [...getters.posts, response.data]
+				commit('setPosts', updatedPosts)
+				resolve(response)
+			})
 		}
 	},
 	mutations: {
