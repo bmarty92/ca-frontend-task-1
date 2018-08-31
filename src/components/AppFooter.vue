@@ -1,5 +1,5 @@
 <template>
-	<footer class="app-footer">© 2018 MANTAS MORKŪNAS</footer>
+	<footer class="app-footer">© 2018 Vardas Pavarde</footer>
 </template>
 <script>
 export default {

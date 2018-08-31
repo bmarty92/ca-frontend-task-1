@@ -1,13 +1,13 @@
 <template>
 	<div class="view-single-post">
-		<template v-if="asyncData">
+		<template v-if="post.id">
 			<PostsBox
-				:data="asyncData"
+				:data="post"
 			/>
 			<AppButton @click.native="$router.push({
 					name: 'EditPost',
 					params: {
-						id: asyncData.id
+						id: post.id
 					}
 			})">
 				Redaguoti
@@ -19,26 +19,25 @@
 <script>
 import AppButton from '@/components/AppButton'
 import PostsBox from '@/components/PostsBox'
+import { mapActions, mapGetters } from 'vuex'
 export default {
 	name: 'ViewSinglePost',
 	components: {
 		AppButton,
 		PostsBox
 	},
-	data () {
-		return {
-			url: `https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`,
-			asyncData: false
-		}
+	computed: {
+		...mapGetters({
+			post: 'post'
+		})
 	},
 	created () {
-		this.getSinglePost()
+		this.getSinglePost(this.$route.params.id)
 	},
 	methods: {
-		async getSinglePost () {
-			const { data } = await this.axios.get(this.url)
-			this.asyncData = data
-		}
+		...mapActions({
+			getSinglePost: 'getSinglePost'
+		})
 	}
 }
 </script>

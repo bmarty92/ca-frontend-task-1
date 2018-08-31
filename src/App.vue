@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-	.app { 
+	.app {
 		display: flex;
 		flex-flow: column;
 		min-height: 100%;

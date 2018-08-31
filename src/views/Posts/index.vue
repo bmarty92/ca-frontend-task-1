@@ -18,25 +18,25 @@
 </template>
 <script>
 import PostsBox from '@/components/PostsBox'
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
 	name: 'ViewPosts',
 	components: {
 		PostsBox
 	},
-	data () {
-		return {
-			url: 'https://jsonplaceholder.typicode.com/posts/?_limit=10',
-			posts: []
-		}
+	computed: {
+		...mapGetters({
+			posts: 'posts'
+		})
 	},
 	created () {
 		this.getPosts()
 	},
 	methods: {
-		async getPosts () {
-			const { data } = await this.axios.get(this.url)
-			this.posts = data
-		}
+		...mapActions({
+			getPosts: 'getPosts'
+		})
 	}
 }
 </script>
