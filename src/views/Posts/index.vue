@@ -27,7 +27,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			posts: 'posts'
+			posts: 'Posts/posts'
 		})
 	},
 	created () {
@@ -35,7 +35,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			getPosts: 'getPosts'
+			getPosts: 'Posts/getPosts'
 		})
 	}
 }

@@ -26,7 +26,7 @@ import AppTextField from '@/components/AppTextField'
 import AppTextarea from '@/components/AppTextarea'
 import AppButton from '@/components/AppButton'
 import PostsBox from '@/components/PostsBox'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 export default {
 	name: 'Viewcreate-post',
 	components: {
@@ -48,7 +48,7 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			createPost: 'createPost'
+			createPost: 'Posts/createPost'
 		}),
 		async onSubmit () {
 			if (this.form.title.length > 0 && this.form.body.length > 0) {

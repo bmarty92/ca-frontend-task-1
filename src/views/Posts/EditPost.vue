@@ -14,7 +14,7 @@
 			<AppButton @click.native="savePost"> Issaugoti </AppButton>
 		</template>
 		<template v-else-if="success">
-			<PostsBox :data="asyncData"/>
+			<PostsBox :data="post"/>
 		</template>
 		<h3 v-else>Loading...</h3>
 	</div>
@@ -24,6 +24,7 @@ import AppTextField from '@/components/AppTextField'
 import AppTextarea from '@/components/AppTextarea'
 import AppButton from '@/components/AppButton'
 import PostsBox from '@/components/PostsBox'
+import { mapActions, mapGetters } from 'vuex'
 export default {
 	name: 'ViewEditPost',
 	components: {
@@ -32,40 +33,43 @@ export default {
 		AppButton,
 		PostsBox
 	},
+	computed: {
+		...mapGetters({
+			post: 'Posts/post'
+		}),
+		form () {
+			return {
+				id: this.$route.params.id,
+				title: this.post.title,
+				body: this.post.body
+			}
+		}
+	},
 	data () {
 		return {
-			url: `https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`,
-			asyncData: false,
 			success: false,
-			loading: false,
-			form: {
-				title: '',
-				body: ''
-			}
+			loading: false
 		}
 	},
 	created () {
 		this.getPost()
 	},
 	methods: {
+		...mapActions({
+			getSinglePost: 'Posts/getSinglePost',
+			editPost: 'Posts/editPost'
+		}),
 		async getPost () {
 			this.loading = true
-			const { data } = await this.axios.get(this.url)
+			await this.getSinglePost(this.$route.params.id)
 			this.loading = false
-			this.asyncData = data
-			this.form.title = data.title
-			this.form.body = data.body
 		},
 		async savePost () {
 			this.loading = true
-			const response = await this.axios.patch(this.url, {
-				userId: this.asyncData.userId,
-				...this.form
-			})
+			const response = await this.editPost(this.form)
 			this.loading = false
 
 			if (response.status === 200) {
-				this.asyncData = response.data
 				this.success = true
 			}
 		}
