@@ -50,7 +50,7 @@ export default {
 
 			&-link {
 				color: white;
-				font-size: 18px;
+				font-size: 14px;
 				text-decoration: none;
 				text-transform: uppercase;
 

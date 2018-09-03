@@ -44,13 +44,13 @@ export default {
 			h2 {
 				margin: 0;
 				padding-bottom: 15px;
-				font-size: 24px;
+				font-size: 18px;
 				font-weight: normal;
 			}
 			p {
 				margin: 0;
 				color: rgba(black, .51);
-				font-size: 16px;
+				font-size: 14px;
 			}
 		}
 	}

@@ -28,7 +28,7 @@ export default {
 		margin-bottom: 15px;
 
 		&__label {
-			font-size: 16px;
+			font-size: 14px;
 			text-transform: uppercase;
 			padding-bottom: 7.5px;
 		}

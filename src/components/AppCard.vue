@@ -26,7 +26,7 @@ export default {
 			max-height: 300px;
 		}
 		&__title {
-			font-size: 18px;
+			font-size: 16px;
 			color: white;
 			font-weight: normal;
 			text-transform: uppercase;

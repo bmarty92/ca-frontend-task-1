@@ -18,7 +18,7 @@ export default {
 			color: white;
 			height: 48px;
 			min-width: 170px;
-			font-size: 16px;
+			font-size: 14px;
 			text-transform: uppercase;
 			border-radius: 6px;
 			transition: .2s ease;
